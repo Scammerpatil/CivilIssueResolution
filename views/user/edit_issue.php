@@ -50,8 +50,6 @@ ob_start();
             required><?= htmlspecialchars($issue['description']) ?></textarea>
         <input type="text" name="location" value="<?= htmlspecialchars($issue['problem_location']) ?>"
             class="input input-bordered w-full" required>
-        <input type="text" name="feedback" value="<?= htmlspecialchars($issue['feedback']) ?>"
-            class="input input-bordered w-full" required>
         <label class="flex items-center gap-2">
             <input type="checkbox" name="status" <?= $issue['status'] ? 'checked' : '' ?> class="checkbox"> Resolved
         </label>

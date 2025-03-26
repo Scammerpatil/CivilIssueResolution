@@ -21,7 +21,7 @@
                     </label>
                     <input
                         class="appearance-none block w-full bg-base-100 text-base-content rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-base-200 border border-base-content"
-                        id="grid-first-name" type="text" name="name" placeholder="Enter Your Name">
+                        id="grid-first-name" type="text" name="name" placeholder="Enter Your Name" required>
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-6">
@@ -32,7 +32,7 @@
                     </label>
                     <input
                         class="appearance-none block w-full bg-base-100 text-base-content rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-base-200 border border-base-content"
-                        id="grid-email" type="email" name="email" placeholder="Enter Your Email">
+                        id="grid-email" type="email" name="email" placeholder="Enter Your Email" required>
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-6">
@@ -43,19 +43,19 @@
                     </label>
                     <input
                         class="appearance-none block w-full bg-base-100 text-base-content rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-base-200 border border-base-content"
-                        id="grid-phone-number" type="number" name="phone" placeholder="Enter Your Phone Number"
-                        minlength="10" maxlength="10">
+                        id="grid-phone-number" type="tel" name="phone" placeholder="Enter Your Phone Number"
+                        minlength="10" maxlength="10" required>
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full px-3">
                     <label class="block uppercase tracking-wide text-base-content text-base font-bold mb-2"
-                        for="grid-address">
+                        for="address">
                         Address
                     </label>
                     <textarea
                         class="appearance-none block w-full bg-base-100 text-base-content rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-base-200 border border-base-content"
-                        id="grid-address" type="text" name="address" placeholder="Enter Your Address"></textarea>
+                        id="address" type="text" name="address" placeholder="Enter Your Address"></textarea>
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-6">

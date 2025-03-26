@@ -11,7 +11,7 @@ $user_type = $_SESSION['user_type'] ?? 'admin';
             <a href="index.php"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
         </li>
         <li class="text-lg <?= ($current_page == 'manage_issues.php') ? 'bg-primary text-white' : ''; ?>">
-            <a href="manage_issues.php"><i class="fa-solid fa-tasks"></i> Manage Issues</a>
+            <a href="manage_issues.php"><i class="fa-solid fa-tasks"></i> Pending Issues</a>
         </li>
         <li class="text-lg <?= ($current_page == 'feedbacks.php') ? 'bg-primary text-white' : ''; ?>">
             <a href="feedbacks.php"><i class="fa-solid fa-comments"></i> View Feedback</a>

@@ -3,17 +3,38 @@ session_start();
 $page_title = "Manage Issues";
 include '../../config/db.php';
 
+// Ensure the user is an admin
 if ($_SESSION['user_type'] !== 'admin') {
     header("Location: /CivilIssueResolution/admin_login.php");
     exit();
 }
-$query = "SELECT * FROM posts ORDER BY posted_date DESC";
+
+// Retrieve the status parameter from the URL
+$status_filter = isset($_GET['status']) ? $_GET['status'] : '';
+
+// Build the query based on the status filter
+if ($status_filter === 'pending') {
+    $query = "SELECT * FROM posts WHERE status = 0 ORDER BY posted_date DESC";
+} elseif ($status_filter === 'resolved') {
+    $query = "SELECT * FROM posts WHERE status = 1 ORDER BY posted_date DESC";
+} else {
+    // If no status filter, retrieve all issues
+    $query = "SELECT * FROM posts ORDER BY posted_date DESC";
+}
+
 $result = $conn->query($query);
 ob_start();
 ?>
 
 <div class="container mx-auto p-6">
     <h2 class="text-2xl font-bold mb-4">Manage Reported Issues</h2>
+
+    <!-- Filter Links -->
+    <div class="mb-4">
+        <a href="manage_issues.php" class="btn btn-primary mr-2">All Issues</a>
+        <a href="manage_issues.php?status=pending" class="btn btn-warning mr-2">Pending Issues</a>
+        <a href="manage_issues.php?status=resolved" class="btn btn-success">Resolved Issues</a>
+    </div>
 
     <?php if ($result->num_rows > 0): ?>
         <table class="table-auto w-full border-collapse border border-base-content/30">
